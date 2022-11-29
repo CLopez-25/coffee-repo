@@ -89,12 +89,12 @@ public class CoffeeController {
     }
 
     @GetMapping("/register")
-    public String showRegistrationForm(){
+    public String showRegistrationForm(Model model){
+        model.addAttribute("customer", new Customer());
         return "/registration";
     }
 
     @PostMapping("/customer/new")
-
     public String registerCustomer(@RequestParam(name="name") String name, @RequestParam(name="email") String email){
         customersDao.save(new Customer(name, email));
         return "redirect:/coffee";
