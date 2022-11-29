@@ -22,7 +22,6 @@ public class CoffeeController {
 
     private final CustomerRepository customersDao;
 
-
     public CoffeeController(CoffeeRepository coffeeDao, SupplierRepository suppliersDao, CustomerRepository customersDao){
         this.coffeeDao = coffeeDao;
         this.suppliersDao = suppliersDao;
@@ -94,9 +93,15 @@ public class CoffeeController {
         return "/registration";
     }
 
+//    @PostMapping("/customer/new")
+//    public String registerCustomer(@RequestParam(name="name") String name, @RequestParam(name="email") String email){
+//        customersDao.save(new Customer(name, email));
+//        return "redirect:/coffee";
+//    }
+
     @PostMapping("/customer/new")
-    public String registerCustomer(@RequestParam(name="name") String name, @RequestParam(name="email") String email){
-        customersDao.save(new Customer(name, email));
+    public String registerCustomer(@ModelAttribute Customer customer){
+        customersDao.save(customer);
         return "redirect:/coffee";
     }
 
@@ -109,4 +114,5 @@ public class CoffeeController {
         customersDao.save(customer);
         return "redirect:/coffee";
     }
+
 }
