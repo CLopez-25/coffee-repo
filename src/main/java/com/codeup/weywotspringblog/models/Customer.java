@@ -6,10 +6,6 @@ import java.util.List;
 @Entity
 @Table(name = "customers")
 public class Customer {
-<<<<<<< HEAD
-=======
-
->>>>>>> 0f9c18783d014ef75aa219bcf751eb50b4cf2542
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -22,11 +18,7 @@ public class Customer {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-<<<<<<< HEAD
-            name = "customers coffees",
-=======
             name = "customers_coffees",
->>>>>>> 0f9c18783d014ef75aa219bcf751eb50b4cf2542
             joinColumns = {@JoinColumn(name = "customer_id")},
             inverseJoinColumns = {@JoinColumn(name = "coffee_id")}
     )
