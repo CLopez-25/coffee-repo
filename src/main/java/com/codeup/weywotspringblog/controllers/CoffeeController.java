@@ -98,6 +98,7 @@ public class CoffeeController {
 //        return "redirect:/coffee";
 //    }
 
+    //Refactored version from above:
     @PostMapping("/customer/new")
     public String registerCustomer(@ModelAttribute Customer customer){
         customersDao.save(customer);
