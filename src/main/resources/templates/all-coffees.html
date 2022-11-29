@@ -8,19 +8,11 @@
 <div>
     <ul>
         <li th:each="coffee : ${coffees}">
-<<<<<<< HEAD
             <a th:href="@{|/coffee/${coffee.getId()}|}"> <!-- th href concat -->
             <span th:text="${coffee.brand}"></span>
             <span th:text="${coffee.origin}"></span>
             <span th:text="${coffee.roast}"></span>
             <button class="favorite" th:data-coffee-id="${coffee.id}" th:data-customer-id="1">Favorite</button>
-=======
-            <a th:href="@{|/coffee/${coffee.getId()}|}">
-                <span th:text="${coffee.brand}"></span>
-                <span th:text="${coffee.origin}"></span>
-                <span th:text="${coffee.roast}"></span>
-                <button class="favorite" th:data-coffee-id="${coffee.id}" th:data-customer-id="1">Favorite</button>
->>>>>>> 0f9c18783d014ef75aa219bcf751eb50b4cf2542
             </a>
         </li>
     </ul>
